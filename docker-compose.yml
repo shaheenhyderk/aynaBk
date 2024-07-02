@@ -1,0 +1,13 @@
+version: '3'
+services:
+  strapi:
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./public/uploads:/app/public/uploads
+      - ./tmp:/app/tmp
+    env_file:
+      - .env

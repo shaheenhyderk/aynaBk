@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "messages",
+  "info": {
+    "singularName": "message",
+    "pluralName": "messages",
+    "displayName": "Message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "string",
+      "required": true
+    },
+    "chat_room": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::chat-room.chat-room"
+    },
+    "sender_type": {
+      "type": "enumeration",
+      "enum": [
+        "USER",
+        "SYSTEM"
+      ],
+      "required": true,
+      "default": "USER"
+    }
+  }
+}
