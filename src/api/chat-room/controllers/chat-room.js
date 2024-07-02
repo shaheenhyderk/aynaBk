@@ -29,6 +29,11 @@ module.exports = createCoreController('api::chat-room.chat-room', ({ strapi }) =
       },
     };
 
+    ctx.query.sort = {
+      ...ctx.query.sort,
+      createdAt: 'asc',
+    };
+
     const { data, meta } = await super.find(ctx);
     return { data, meta };
   },
